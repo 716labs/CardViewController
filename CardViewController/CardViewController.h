@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#define CELL_ID @"CardViewControllerCell"
+
 @interface CardViewController : UICollectionViewController
+
+@property (strong, nonatomic) UIView *topView;
 
 @end

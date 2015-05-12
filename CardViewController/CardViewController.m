@@ -9,8 +9,6 @@
 #import "CardViewController.h"
 #import "CardViewControllerLayout.h"
 
-#define CELL_ID @"CardViewControllerCell"
-
 @interface CardViewController ()
 
 @end
@@ -37,6 +35,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 300)];
+    self.topView.backgroundColor = [UIColor whiteColor];
+    [self.view insertSubview:self.topView aboveSubview:self.collectionView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
