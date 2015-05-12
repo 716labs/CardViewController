@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "CardViewController"
   s.version      = "1.0"
-  s.summary      = "Customisable checkbox class for Objective-C"
+  s.summary      = "TODO"
 
   s.homepage     = "https://github.com/716labs/CardViewController/"
 
