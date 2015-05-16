@@ -11,6 +11,7 @@
 
 @interface ViewController : CardViewController
 
+@property (strong, nonatomic) NSArray *obj1;
 
 @end
 

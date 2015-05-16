@@ -20,6 +20,7 @@
 {
     if (self = [super initWithCollectionViewLayout:[[CardViewControllerLayout alloc] init]]) {
         [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CELL_ID];
+        [self.collectionView setBackgroundColor:[UIColor clearColor]];
     }
     return self;
 }
@@ -28,17 +29,29 @@
 {
     if (self = [super initWithCollectionViewLayout:layout]) {
         [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CELL_ID];
+        [self.collectionView setBackgroundColor:[UIColor clearColor]];
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 300)];
-    self.topView.backgroundColor = [UIColor whiteColor];
-    [self.view insertSubview:self.topView aboveSubview:self.collectionView];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    // Do any additional setup after loading the view.
+    CGRect frame = CGRectMake(0, 0, self.view.bounds.size.width, 300);
+    if (iPhone5) {
+        frame = CGRectMake(0, 0, self.view.bounds.size.width, 356);
+    } else if (iPhone6) {
+        frame = CGRectMake(0, 0, self.view.bounds.size.width, 406);
+    } else if (iPhone6Plus) {
+        frame = CGRectMake(0, 0, self.view.bounds.size.width, 476);
+    }
+    
+    self.topView = [[UIView alloc] initWithFrame:frame];
+    self.topView.backgroundColor = [UIColor redColor];
+    [self.view insertSubview:self.topView aboveSubview:self.collectionView];
 }
 
 - (void)didReceiveMemoryWarning {
